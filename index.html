@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For Chandni ❤️</title>
+
+<style>
+body{
+  margin:0;
+  padding:0;
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background: radial-gradient(circle at top, #3b0000, #000);
+  font-family: 'Segoe UI', sans-serif;
+  color:white;
+}
+
+.container{
+  position:relative;
+  z-index:2;
+  max-width:90%;
+  animation: fadeIn 3s ease-in-out;
+}
+
+img{
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  border:5px solid #ff4d6d;
+  box-shadow:0 0 30px #ff1a4d;
+  margin-bottom:20px;
+  cursor:pointer;
+  transition: transform 0.4s;
+}
+
+img:hover{
+  transform: scale(1.08);
+}
+
+h1{
+  font-size:38px;
+  color:#ff4d6d;
+  text-shadow:0 0 25px #ff1a4d;
+}
+
+p{
+  font-size:18px;
+  line-height:1.6;
+}
+
+.signature{
+  margin-top:25px;
+  font-size:16px;
+  color:#ff99aa;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="chandni.jpg" id="photo">
+
+<h1>🌹 Chandni 🌹</h1>
+
+<p>
+Jaise har rang ka gulab apni khushboo se mehka deta hai,<br>
+Waise hi tum meri zindagi ke har lamhe ko rangeen bana deti ho.<br><br>
+Tum sirf ek naam nahi...<br>
+Meri duniya ka sabse khoobsurat ehsaas ho 💖<br><br>
+Chalo phir se baat shuru karte hain... 🌹
+</p>
+
+<div class="signature">
+Ye surprise sirf tumhare liye banaya gaya hai ❤️
+</div>
+
+</div>
+
+<script>
+
+/* 🌹 Rose Rain */
+function createRose(){
+  const rose=document.createElement("div");
+  rose.innerHTML="🌹";
+  rose.style.position="fixed";
+  rose.style.top="-50px";
+  rose.style.left=Math.random()*window.innerWidth+"px";
+  rose.style.fontSize=(20+Math.random()*30)+"px";
+  rose.style.transition="transform 6s linear, opacity 6s linear";
+  rose.style.pointerEvents="none";
+  document.body.appendChild(rose);
+
+  setTimeout(()=>{
+    rose.style.transform="translateY("+window.innerHeight+"px)";
+    rose.style.opacity="0";
+  },50);
+
+  setTimeout(()=>{
+    rose.remove();
+  },6000);
+}
+setInterval(createRose,400);
+
+
+/* ✨ Sparkle Effect */
+function createSparkle(){
+  const sparkle=document.createElement("div");
+  sparkle.innerHTML="✨";
+  sparkle.style.position="fixed";
+  sparkle.style.top=Math.random()*window.innerHeight+"px";
+  sparkle.style.left=Math.random()*window.innerWidth+"px";
+  sparkle.style.fontSize=(10+Math.random()*15)+"px";
+  sparkle.style.opacity="0.8";
+  sparkle.style.transition="opacity 2s ease";
+  sparkle.style.pointerEvents="none";
+  document.body.appendChild(sparkle);
+
+  setTimeout(()=>{sparkle.style.opacity="0";},100);
+  setTimeout(()=>{sparkle.remove();},2000);
+}
+setInterval(createSparkle,300);
+
+
+/* 💖 Heart Burst on Photo Click */
+document.getElementById("photo").addEventListener("click", function(){
+  for(let i=0;i<20;i++){
+    const heart=document.createElement("div");
+    heart.innerHTML="💖";
+    heart.style.position="fixed";
+    heart.style.left=window.innerWidth/2+"px";
+    heart.style.top=window.innerHeight/2+"px";
+    heart.style.fontSize="25px";
+    heart.style.pointerEvents="none";
+    heart.style.transition="transform 2s ease, opacity 2s ease";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+      heart.style.transform="translate("+
+      (Math.random()*400-200)+"px,"+
+      (Math.random()*400-200)+"px)";
+      heart.style.opacity="0";
+    },50);
+
+    setTimeout(()=>{
+      heart.remove();
+    },2000);
+  }
+});
+
+</script>
+
+</body>
+</html>
